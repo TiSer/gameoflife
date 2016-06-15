@@ -10,14 +10,14 @@ class Life
       row.each_with_index do |cell, x|
         count = lives_counter(y,x)
         new_grid[y][x] = if cell.zero?
-          Rules::NEW_ONE.include?(count) ? 1 : 0
+          Game::Rules::NEW_ONE.include?(count) ? 1 : 0
         else
-          Rules::ALIVE.include?(count) ? 1 : 0
+          Game::Rules::ALIVE.include?(count) ? 1 : 0
         end
       end
     end
 
-    Rules.everything_stable?(@field.grid, new_grid)
+    Game::Rules.everything_stable?(@field.grid, new_grid)
     @field.grid = new_grid
   end
 

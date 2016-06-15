@@ -1,6 +1,6 @@
 require 'spec_helper'
 require 'life'
-require 'rules'
+require 'game'
 require 'field'
 
 describe Life do

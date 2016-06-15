@@ -1,8 +1,7 @@
 require 'field'
 require 'life'
-require 'display'
 require 'text_parser'
-require 'rules'
+require 'game'
 
 namespace :game do
 
@@ -16,12 +15,8 @@ namespace :game do
     grid_coordinates = TextParser.parse(file_contents)
     field.fill_in(grid_coordinates)
 
-    args[:how_many].to_i.times do |i|
-      Display.show(field)
-      life.step!
-      sleep 0.1
-      Rules.anybody_alive?(field.grid)
-    end
+    Game.start!(args[:how_many], field, life)
+    puts "Iterations run out."
   end
 
 end
