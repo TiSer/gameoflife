@@ -2,11 +2,10 @@
 
 This game works as a rake task.
 
-Run $rake <tt>game:run[1,2,3]<tt> where "1" - is columns, "2" - is rows and "3" is a number of iterations.
+Run <tt>$rake game:run[1,2,3]</tt> where "1" - is columns, "2" - is rows and "3" is a number of iterations.
 
 You can place your file to public folder with name <tt>inp.txt</tt>.
 Format for coordinates could be fill in with comas and semicolons, where first digit is a number of array and second on is a place of alive cell that you want to put inside.
 Example:
 
-* 1,2; 1,3; 1,4; 1,5; 2,3;
-* 1,2; 1,3; 1,4; 1,5; 2,0;
+1,2; 1,3; 1,4; 1,5; 2,3;
