@@ -7,8 +7,8 @@ class Field
     @grid = make_grid
   end
 
-  def fill(*cells)
-    cells.each {|y,x| grid[y][x] = 1}
+  def fill_in(coordinates)
+    coordinates.each {|row| fill(*row) }
   end
 
   def to_s
@@ -21,5 +21,11 @@ class Field
   def make_grid
     Array.new(rows) { Array.new(cols, 0) }
   end
+
+
+  private
+    def fill(*cells)
+      cells.each {|y,x| grid[y][x] = 1}
+    end
 
 end
