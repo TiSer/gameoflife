@@ -38,6 +38,7 @@ class Life
             values << @field.grid[i][j]
           end
         end
+
         values
       end
     end

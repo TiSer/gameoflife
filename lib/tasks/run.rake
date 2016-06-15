@@ -6,7 +6,7 @@ require 'rules'
 
 namespace :game do
 
-  desc "Arguments: rows, cols, how many iterations to continue]"
+  desc "Arguments: [rows, cols, how many iterations to continue]"
   task :run, [:cols, :rows, :how_many] => :environment do |t, args|
     args.with_defaults(cols: 30, rows: 30, how_many: 15)
 
