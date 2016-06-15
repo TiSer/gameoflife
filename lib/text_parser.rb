@@ -1,8 +1,8 @@
 module TextParser
   def self.parse(contents)
-  	grid_coordinates = []
+    grid_coordinates = []
 
-  	contents.split("\n").each do |line|
+    contents.split("\n").each do |line|
       row = []
       line.split("; ").each do |pair|
         row << pair.split(',').map(&:to_i)

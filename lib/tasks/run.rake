@@ -11,7 +11,7 @@ namespace :game do
 
     field = Field.new(args[:cols], args[:rows])
     life = Life.new(field)
-    file_contents = File.new("public/inp.txt", "r").read
+    file_contents = File.new("inp.txt", "r").read
     grid_coordinates = TextParser.parse(file_contents)
     field.fill_in(grid_coordinates)
 
