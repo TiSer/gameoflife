@@ -5,7 +5,7 @@ require 'field'
 
 describe Life do
 
-  field = Field.new(5,5)
+  let(:field) { Field.new(5,5)  }
   subject(:life) { Life.new(field) }
   before { field.fill_in([[[1,2], [1,3], [1,4], [1,4], [2,3]]]) } 
 

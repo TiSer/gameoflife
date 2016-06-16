@@ -5,8 +5,8 @@ require 'field'
 require 'text_parser'
 
 describe Game::Rules do
-  field = Field.new(5,5)
-  life = Life.new(field)
+  let(:field) { Field.new(5,5)  }
+  let(:life)  { Life.new(field) }
 
   before do
     expect(Display).to receive(:show).at_least(:once)
