@@ -20,9 +20,11 @@ describe Game::Rules do
       field.fill_in(grid_coordinates)
     end
    
-    it 'should stop game if all cells are died' do
-      expect(subject).to receive(:puts).with("GAME OVER: all cells died. Press any key.").once
-      expect{Game.start!(10, field, life)}.to raise_error(SystemExit)
+    context 'when all cells will die' do 
+      it 'should stop game' do
+        expect(subject).to receive(:puts).with("GAME OVER: all cells died. Press any key.").once
+        expect{Game.start!(10, field, life)}.to raise_error(SystemExit)
+      end
     end
   end
 
@@ -33,9 +35,11 @@ describe Game::Rules do
       field.fill_in(grid_coordinates)
     end
    
-    it 'should stop game if situation is stable' do
-      expect(subject).to receive(:puts).with("GAME OVER: everything stable. Press any key.").once
-      expect{Game.start!(10, field, life)}.to raise_error(SystemExit)
+    context 'when all cells will stay alive and become stable' do 
+      it 'should stop game' do
+        expect(subject).to receive(:puts).with("GAME OVER: everything stable. Press any key.").once
+        expect{Game.start!(10, field, life)}.to raise_error(SystemExit)
+      end
     end
   end
 
