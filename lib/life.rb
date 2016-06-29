@@ -1,7 +1,7 @@
 class Life
 
   def initialize(field)
-  	@field = field
+    @field = field
   end
 
   def step!
@@ -21,10 +21,6 @@ class Life
     @field.grid = new_grid
   end
 
-  def lives_counter(y,x)
-    neighbors(y,x).select {|cell| cell == 1}.size
-  end
-
   private
 
     def neighbors(y, x)
@@ -41,6 +37,10 @@ class Life
 
         values
       end
+    end
+
+    def lives_counter(y,x)
+      neighbors(y,x).select {|cell| cell == 1}.size
     end
 
 end

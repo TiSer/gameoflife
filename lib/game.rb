@@ -1,4 +1,5 @@
-require 'display'
+require 'io/console'
+require_relative 'display'
 
 class Game
   def self.start!(iterations, field, life)
@@ -15,7 +16,7 @@ class Game
     NEW_ONE = [3]
 
     def self.anybody_alive?(grid)
-      if grid.flatten.exclude?(1)
+      unless grid.flatten.include?(1)
         puts "GAME OVER: all cells died. Press any key."
         get_out!
       end
@@ -32,6 +33,12 @@ class Game
       STDIN.getch
       exit
     end
+  end
+
+  module Settings
+    COLS = 25
+    ROWS = 25
+    HOW_MANY = 100
   end
 
 end

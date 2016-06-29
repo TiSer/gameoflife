@@ -17,15 +17,15 @@ describe Life do
     # [0, 0, 0, 0, 0]
 
     it 'should return 2 for 0,4' do
-      expect(life.lives_counter(0, 4)).to be == 2
+      expect(life.send(:lives_counter, 0, 4)).to be == 2
     end
 
     it 'should return 3 for 2,3' do
-      expect(life.lives_counter(2, 3)).to be == 3
+      expect(life.send(:lives_counter, 2, 3)).to be == 3
     end
 
     it 'should return zero for 3,1' do
-      expect(life.lives_counter(3,1)).to be_zero
+      expect(life.send(:lives_counter, 3,1)).to be_zero
     end
   end
 

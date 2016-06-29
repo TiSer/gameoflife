@@ -1,10 +1,9 @@
 == README
 
-This game works as a rake task.
+Run <tt>$ruby run.rb</tt>.
+You can change game setting in file game.rb (columns, rows and number of iterations).
 
-Run <tt>$rake game:run[1,2,3]</tt> where "1" - is columns, "2" - is rows and "3" is a number of iterations.
-
-You can place your file to root folder with name <tt>inp.txt</tt>.
+You can place your file with coordinates to root folder with name <tt>inp.txt</tt>.
 Format for coordinates could be fill in with comas and semicolons, where first digit is Y and second on is a place of alive cell on X that you want to put inside.
 Example:
 
