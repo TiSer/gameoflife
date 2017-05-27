@@ -11,6 +11,11 @@ class Game
     end
   end
 
+  def self.over!
+    STDIN.getch
+    exit
+  end
+
   module Rules
     ALIVE = [2,3]
     NEW_ONE = [3]
@@ -18,20 +23,15 @@ class Game
     def self.anybody_alive?(grid)
       unless grid.flatten.include?(1)
         puts "GAME OVER: all cells died. Press any key."
-        get_out!
+        Game.over!
       end
     end
 
     def self.everything_stable?(current_grid, new_grid)
       if current_grid == new_grid
         puts "GAME OVER: everything stable. Press any key."
-        get_out!
+        Game.over!
       end
-    end
-
-    def self.get_out!
-      STDIN.getch
-      exit
     end
   end
 
